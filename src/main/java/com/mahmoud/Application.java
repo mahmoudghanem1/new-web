@@ -13,6 +13,11 @@ public class Application {
         return "Hello Mahmoud 🚀";
     }
 
+    @GetMapping("/boom")
+    public String boom() {
+        throw new RuntimeException("Test error");
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

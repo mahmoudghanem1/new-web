@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: new-web
+  template:
+    metadata:
+      labels:
+        app: new-web
+    spec:
+      imagePullSecrets:
+        - name: dockerhub-secret
+      containers:
+        - name: new-web
+          image: mahmoudghanem/new-web:v3
+          ports:
+            - containerPort: 8080
+          
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
