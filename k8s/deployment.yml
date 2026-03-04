@@ -16,7 +16,7 @@ spec:
         - name: dockerhub-secret
       containers:
         - name: new-web
-          image: mahmoudghanem/new-web:f1da1f874118268c973fa5aeb56096fbbb3a75af
+          image: mahmoudghanem/new-web:14e521cf2d2f37a3f309adb1e954a736624789d2
           ports:
             - containerPort: 8080
           env:
