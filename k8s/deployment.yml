@@ -12,8 +12,6 @@ spec:
       labels:
         app: new-web
     spec:
-      imagePullSecrets:
-        - name: dockerhub-secret
       containers:
         - name: new-web
           image: mahmoudghanem/new-web:75bf524cbd6bca92c097920ffb9d2017a9b105f6
@@ -26,6 +24,10 @@ spec:
               value: newweb
             - name: SPRING_DATASOURCE_PASSWORD
               value: newwebpass
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: update
+            - name: SPRING_JPA_SHOW_SQL
+              value: "true"
           resources:
             requests:
               cpu: "200m"
