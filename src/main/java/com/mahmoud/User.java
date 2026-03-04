@@ -3,6 +3,7 @@ package com.mahmoud;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "users")   // مهم جدًا
 public class User {
 
     @Id
@@ -17,7 +18,15 @@ public class User {
         this.name = name;
     }
 
-    public Long getId() { return id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
