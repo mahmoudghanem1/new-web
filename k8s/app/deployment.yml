@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: new-web
-          image: mahmoudghanem/new-web:6fbfb5ea5f18ec6a8c0275c11998e77a35de1303
+          image: mahmoudghanem/new-web:17356c386a57691b86b97ea512393ab8fc979f0a
           ports:
             - containerPort: 8080
           env:
