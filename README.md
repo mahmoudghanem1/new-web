@@ -9,6 +9,8 @@ GitOps-based CI/CD pipeline deploying a Spring Boot application to Kubernetes wi
 ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white)
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?logo=grafana&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-6DB33F?logo=springboot&logoColor=white)
+
+
 This project demonstrates a complete DevOps workflow using:
 
 * Docker
@@ -89,12 +91,17 @@ new-web
 
 # CI/CD Pipeline
 
-1️⃣ Developer pushes code to GitHub
-2️⃣ GitHub Actions builds Docker image
-3️⃣ Image pushed to Docker Hub
-4️⃣ Deployment manifest updated
-5️⃣ ArgoCD detects change
-6️⃣ Kubernetes updates the application
+Developer pushes code to GitHub
+
+GitHub Actions builds Docker image
+
+Image pushed to Docker Hub
+
+Deployment manifest updated
+
+ArgoCD detects change
+
+Kubernetes updates the application
 
 ---
 
