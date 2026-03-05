@@ -1,0 +1,29 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: new-web-alerts
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  groups:
+  - name: new-web.rules
+    rules:
+
+    - alert: NewWebAppDown
+      expr: up{job="new-web-service"} == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "New Web Application Down"
+        description: "new-web application is not responding."
+
+    - alert: HighErrorRate
+      expr: sum(rate(http_server_requests_seconds_count{status!~"2.."}[1m])) > 1
+      for: 2m
+      labels:
+        severity: warning
+      annotations:
+        summary: "High Error Rate"
+        description: "Too many HTTP errors detected."
