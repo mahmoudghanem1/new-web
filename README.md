@@ -156,5 +156,3 @@ sum(rate(http_server_requests_seconds_count{status!~"2.."}[1m])) > 1
 # Author
 
 Mahmoud Ghanem
-
-DevOps learning project demonstrating GitOps deployment using Kubernetes.
